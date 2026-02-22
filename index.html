@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChocoPoint - Doces Artesanais</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://wa.me;">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" href="images/logo.jpg">
+</head>
+<body>
+    <!-- Cabeçalho Principal -->
+    <header id="cabecalhoPrincipal" class="cabecalho">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="ChocoPoint" class="logo-imagem">
+                <h1 class="logo-texto">ChocoPoint</h1>
+            </div>
+            <nav class="navegacao">
+                <a href="#inicio" class="link-navegacao">Início</a>
+                <a href="#nossos-doces" class="link-navegacao">Nossos Doces</a>
+                <a href="#contato" class="link-navegacao">Contato</a>
+                <button id="botaoCarrinho" class="botao-whatsapp">
+                    🛒 Carrinho (<span id="quantidadeCarrinho">0</span>)
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Início -->
+    <section id="inicio" class="secao-inicio">
+        <div class="container">
+            <div class="conteudo-inicio">
+                <h2 class="titulo-inicio">Doces Artesanais Feitos com Amor</h2>
+                <p class="subtitulo-inicio">
+                    Descubra nossos brigadeiros, brownies, pudins e muito mais. 
+                    Feitos com ingredientes selecionados e muito carinho.
+                </p>
+                <a href="#nossos-doces" class="botaoPrimario">Ver Cardápio</a>
+            </div>
+            <div class="imagem-inicio">
+                <div class="imagem-placeholder">🍰</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Nossos Doces -->
+    <section id="nossos-doces" class="secaoProdutos">
+        <div class="container">
+            <h2 class="tituloSecao">Nossos Doces</h2>
+            <p class="subtituloSecao">Escolha seus favoritos</p>
+            
+            <div class="gradeProdutos" id="gradeProdutos">
+                <!-- Produtos serão inseridos via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Diferenciais -->
+    <section id="diferenciais" class="secaoDiferenciais">
+        <div class="container">
+            <div class="cartaoDiferencial">
+                <span class="emojiDiferencial">🌟</span>
+                <h3 class="tituloDiferencial">Qualidade</h3>
+                <p class="textoDiferencial">Ingredientes selecionados e frescos</p>
+            </div>
+            <div class="cartaoDiferencial">
+                <span class="emojiDiferencial">💝</span>
+                <h3 class="tituloDiferencial">Feito com Amor</h3>
+                <p class="textoDiferencial">Cada doce é preparado com carinho</p>
+            </div>
+            <div class="cartaoDiferencial">
+                <span class="emojiDiferencial">🚚</span>
+                <h3 class="tituloDiferencial">Entrega</h3>
+                <p class="textoDiferencial">Entregamos na sua casa</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="secaoContato">
+        <div class="container">
+            <h2 class="tituloSecao">Fale Conosco</h2>
+            <p class="subtituloSecao">Tire suas dúvidas ou faça seu pedido</p>
+            
+            <div class="informacoesContato">
+                <div class="infoItem">
+                    <span class="emojiInfo">📱</span>
+                    <p class="textoInfo">(13) 98849-0542</p>
+                </div>
+                <div class="infoItem">
+                    <span class="emojiInfo">📍</span>
+                    <p class="textoInfo">Santos, SP</p>
+                </div>
+                <div class="infoItem">
+                    <span class="emojiInfo">🕐</span>
+                    <p class="textoInfo">Seg a Sáb: 9h às 18h</p>
+                </div>
+            </div>
+            
+            <button type="button" id="botaoPedidoWhatsApp" class="botaoPrimario botaoGrande">
+                Fazer Pedido pelo WhatsApp
+            </button>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer id="rodapeSite" class="rodape">
+        <div class="container">
+            <div class="conteudoRodape">
+                <div class="logoRodape">
+                    <img src="images/logo.jpg" alt="ChocoPoint" class="logo-imagem logo-rodape">
+                    <span class="logo-texto">ChocoPoint</span>
+                </div>
+                <p class="textoRodape">
+                    © 2026 ChocoPoint. Todos os direitos reservados.
+                </p>
+                <p class="textoPequeno">Doces artesanais com amor ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal do Carrinho -->
+    <div id="modalCarrinho" class="modal">
+        <div class="modal-conteudo">
+            <span class="modal-fechar">&times;</span>
+            <h2 class="tituloModal">🛒 Seu Carrinho</h2>
+            
+            <div id="itensCarrinho" class="itensCarrinho">
+                <!-- Itens do carrinho serão inseridos aqui -->
+            </div>
+            
+            <div id="carrinhoVazio" class="carrinhoVazio">
+                <p class="emojiVazio">🛒</p>
+                <p class="tituloVazio">Seu carrinho está vazio</p>
+                <p class="subtituloVazio">Adicione alguns doces deliciosos!</p>
+            </div>
+            
+            <div id="resumoCarrinho" class="resumoCarrinho">
+                <div class="linhaTotal">
+                    <span class="rotuloTotal">Total do Pedido:</span>
+                    <span id="valorTotalCarrinho" class="valorTotal">R$ 0,00</span>
+                </div>
+                <button id="botaoFinalizar" class="botaoPrimario botaoGrande botao-block">
+                    Finalizar Pedido
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Finalização -->
+    <div id="modalFinalizacao" class="modal">
+        <div class="modal-conteudo modal-conteudo-grande">
+            <span class="modal-fechar" data-fechar-modal>&times;</span>
+            <h2 class="tituloModal">📝 Finalizar Pedido</h2>
+            
+            <!-- Resumo do pedido -->
+            <div class="resumoPedido">
+                <h3 class="tituloSecaoModal">Resumo do Pedido</h3>
+                <p id="resumoQuantidade" class="textoResumo">0 itens</p>
+                <p id="resumoTotal" class="totalPedido">Total: R$ 0,00</p>
+            </div>
+            
+            <!-- Dados do cliente -->
+            <div class="secaoFormulario">
+                <h3 class="tituloSecaoModal">Dados do Cliente</h3>
+                
+                <div class="campo">
+                    <label for="nomeCliente" class="rotulo">Nome Completo</label>
+                    <input type="text" id="nomeCliente" class="input" placeholder="Seu nome completo" required>
+                </div>
+                
+                <div class="campo">
+                    <label for="telefoneCliente" class="rotulo">Telefone</label>
+                    <input type="tel" id="telefoneCliente" class="input" placeholder="(11) 99999-9999" required>
+                </div>
+                
+                <div class="campo">
+                    <label for="enderecoEntrega" class="rotulo">Endereço de Entrega</label>
+                    <textarea id="enderecoEntrega" class="input input-textarea" placeholder="Rua, número, complemento, bairro" required></textarea>
+                </div>
+            </div>
+            
+            <!-- Forma de pagamento -->
+            <div class="secaoFormulario">
+                <h3 class="tituloSecaoModal">Forma de Pagamento</h3>
+                <div class="opcoesPagamento">
+                    <label class="opcaoPagamento">
+                        <input type="radio" name="formaPagamento" value="Dinheiro" checked>
+                        <span class="textoOpcao">Dinheiro</span>
+                    </label>
+                    <label class="opcaoPagamento">
+                        <input type="radio" name="formaPagamento" value="PIX">
+                        <span class="textoOpcao">PIX</span>
+                    </label>
+                    <label class="opcaoPagamento">
+                        <input type="radio" name="formaPagamento" value="Cartão de Débito">
+                        <span class="textoOpcao">Cartão de Débito</span>
+                    </label>
+                    <label class="opcaoPagamento">
+                        <input type="radio" name="formaPagamento" value="Cartão de Crédito">
+                        <span class="textoOpcao">Cartão de Crédito</span>
+                    </label>
+                </div>
+            </div>
+            
+            <button id="botaoEnviarPedido" class="botaoPrimario botaoGrande botao-block">
+                📱 Enviar Pedido via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de Sucesso -->
+    <div id="modalSucesso" class="modal">
+        <div class="modal-conteudo modal-pequeno">
+            <div class="conteudoSucesso">
+                <span class="emojiSucesso">✅</span>
+                <h2 class="tituloSucesso">Pedido Enviado!</h2>
+                <p class="textoSucesso">Seu pedido foi aberto no WhatsApp. Complete o envio lá!</p>
+                <button id="botaoFecharSucesso" class="botaoPrimario">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
